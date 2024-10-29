@@ -161,32 +161,26 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
 
 ###
-
 * Expand and collapse items using arrow icons
 ![Expand and collapse manually](media/gif_layout_expand_collapse_manual.gif)
 
 ###
-
 * Expand and collapse item groups using toolbar
 ![Expand and collapse using toolbar](media/gif_layout_expand_collapse_menu.gif)
 
 ###
 * Hide unwanted items
-
 ![Hide items](media/gif_layout_hide_show.gif)
 
 ###
-
 * Select item groups
 ![Select menu](media/gif_select_menu.gif)
 
 ###
-
 * Rebuild a graph after code changes
 ![Graph rebuild](media/gif_graph_rebuild.gif)
 
 ###
-
 * Create custom clusters
 ![Cluster menu](media/gif_cluster_menu.gif)
 
