@@ -8,8 +8,10 @@
 
 * Select a set of files to generate an interactive graph of the code
 * Customize graphs to show only the classes and functions that are relevant to the task at hand
+* Demo video: https://www.youtube.com/watch?v=ZsDd4Q4E81I
 
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
+
 
 # Features
 
@@ -24,7 +26,7 @@
 
 * Customize the graph:
     * Layout graphs by file/folder, using custom clusters, or without any clusters
-    * Hide unwanted graph graph items that are not relevant to your focus
+    * Hide unwanted graph items that are not relevant to your focus
     * Collapse graph items to show class dependencies at any level of detail
     * Easily exclude specific files from the graph
 
@@ -95,7 +97,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
         * If the name of a class, function, or interface has changed, then the collapsed-state and hidden-state for that graph items will be lost. If the graph is being loaded from an **AtomicViz** file, then you edit the graph file manually to fix the names of classes, functions, or interfaces that should be hidden or collapsed.
 
     * Click the button _**View: Fit graph**_ to reset the zoom level and make the entire graph visible
-    * Save the graph as an **AtomicViz** file or **export as SVG**
+    * Save the graph as an **AtomicViz** file or **export as SVG**. Note that **AtomicViz** graph files are usable only in the context of the workspace in which they are created.
     * Choose whether the graph **automatically follows** the cursor position in the editor. A newly focused graph item will be  highlighted in pink for a moment
 
 * **Selection toolbar**
@@ -112,7 +114,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
     * Expand and collapse graph items to show dependencies at any level of detail
         * **Collapse graph items**: classes or anonymous functions (or callbacks)
         * **Expand graph items**: classes or anonymous functions (or callbacks)
-    * Hide selected items. Hide unwanted graph graph items that are not relevant to your focus or the task at hand
+    * Hide selected items. Hide unwanted graph items that are not relevant to your focus or the task at hand
     The **hidden items** can be made visible again by clicking on the eye icon (for a nested graph item), or using the button  _**Layout: Show hidden**_ to show top-level graph items that are hidden
     * You can expand the source and destination of an arrow by **double-clicking the arrow**. If the actual source or destination graph item is not visible (because its parent is collapsed), then the parent will be expanded to reveal the graph item
 
@@ -158,31 +160,25 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 # Quick tutorials
 
-* Layout graphs by file/folder, by file, or without any grouping
+#### Layout graphs by file/folder, by file, or without any grouping
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
 
-###
-* Expand and collapse items using arrow icons
+#### Expand and collapse items using arrow icons
 ![Expand and collapse manually](media/gif_layout_expand_collapse_manual.gif)
 
-###
-* Expand and collapse item groups using toolbar
+#### Expand and collapse item groups using toolbar
 ![Expand and collapse using toolbar](media/gif_layout_expand_collapse_menu.gif)
 
-###
-* Hide unwanted items
+#### Hide unwanted items
 ![Hide items](media/gif_layout_hide_show.gif)
 
-###
-* Select item groups
+#### Select item groups
 ![Select menu](media/gif_select_menu.gif)
 
-###
-* Rebuild a graph after code changes
+#### Rebuild a graph after code changes
 ![Graph rebuild](media/gif_graph_rebuild.gif)
 
-###
-* Create custom clusters
+#### Create custom clusters
 ![Cluster menu](media/gif_cluster_menu.gif)
 
 # How does it work
