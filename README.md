@@ -16,10 +16,10 @@
 # Features
 
 *  Create interactive graphs of:
-  * Function calls
-  * Variable references
-  * Class inheritance
-  * Interface implementation
+    * Function calls
+    * Variable references
+    * Class inheritance
+    * Interface implementation
 
 *  Works for many programming languages
 *  Interacts with the code:
@@ -84,11 +84,17 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 * **Pan and zoom**
     * Pan by clicking and dragging the graph
     * Zoom in and out using the mouse wheel or a 2-finger motion on a trackpad. The focal point for zooming is the pointer location, not the center of the screen 
-    * Reset zoom using the toolbar button: _**Zoom:Zoom out**_
+    * Reset zoom using the toolbar button: _**View: Zoom out**_
 
 * **Interact with the code**
     * Jump to code by double-clicking on a graph item
     * Make the graph follow code editing by checking the checkbox  _**View: Follow edits**_
+
+* **Graph item actions**
+    * Collapse and expand a graph item using the arrow icons at its top-right 
+    * Remove a file or group by clicking the trash icon at its top-left
+    * Hide unwanted graph items by selecting them and clicking the buttton _**Visible: Hide**_ in the **Visible** toolbar
+    * Click a graph item to toggle its selection state. To select multiple graph items, check the checkbox _**"Selection: Multi"**_ 
 
 * **Graph toolbar**
     * For a **Files graph**:
@@ -112,11 +118,11 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 * **Grouping toolbar**
     * Choose to group graph items by **file/folder**, by **file**, **without any grouping**, or using **custom groups**
-    * When choosing to layout the graph by **files** or **without any grouping**, then you can create your own custom groups
-    * Type a name for the group, select the top-level graph items to group, and then click the button _**Grouping: Create group**_
-    * A top-level graph item can be included in just one group
+    * When choosing to layout the graph by **files** or **without any grouping**, then you can create your own **custom groups**
+    * To create a group, type a name for it, select the top-level graph items to include, and then click the button _**Grouping: Create group**_
+    * Groups can include other groups. To select a group click the checkmark icon at its top-left
 
-* **Visibile toolbar**
+* **Visible toolbar**
     * Hide selected items. You can hide graph items that are not relevant to your focus or to the task at hand
     * **Hidden items** can be made visible again by clicking on the eye icon on a graph item), or using the toolbar button  _**Layout: Show hidden**_ to show top-level graph items that are hidden
     * Expand and collapse graph items to change the level of detail
@@ -131,9 +137,9 @@ Files identified in any **.gitignore** file in the project will be ignored when 
     * Sort graph items by their file positions, or alternatively by the kind of item and alphabetically
     * Adjust the horizontal spacing between graph items to improve the graph layout
 
-* **Zoom toolbar**
+* **View toolbar**
     * Check the checkbox  _**View: Follow edits**_ to make the graph follow edits to the code
-    * Click the button _**Zoom:Zoom out**_ to reset the zoom level and make the entire graph visible
+    * Click the button _**View: Zoom out**_ to reset the zoom level and make the entire graph visible, or simply right-click
 
 * **Selection toolbar**
     * Click a graph item to toggle its selection state
@@ -141,6 +147,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
     * To select multiple graph items, check the checkbox _**"Selection: Multi"**_. By default, you can only select a single graph item. 
     * By default, selecting a graph item also **selects its children**. You can toggle the selected state of an item without **affecting its children** by holding down the _**Ctrl key**_ while clicking on the item
     * Clear all selections using the button _**Selection: Clear selection**_ or using the **Space Bar**
+    * You can select a set of **sibling graph items** using the Shift key. Select the first item, hold down Shift and select a sibling item
     * You can select a set of graph items using the button: _**Selection: Select items**_. Choose to select classes, interfaces, search result items, or graph items that are not connected to anything
     * When using multi-slection, a single edge can be both incoming and outgoing. Therefore, select a single graph item to clearly see its incoming and outgoing edges.
     * Clicking on an arrow will select it and hide all other arrows. To clear the arrow selection, click anywhere not on a graph item or edge. 
