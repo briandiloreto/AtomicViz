@@ -15,24 +15,24 @@
 
 # Features
 
-*  Create interactive graphs of:
+* Create interactive graphs of:
     * Function calls
     * Variable references
     * Class inheritance
     * Interface implementation
 
-*  Works for many programming languages
-*  Interacts with the code:
+* Works for many programming languages
+* Interacts with the code:
     * Jump to code from the graph
     * Make the graph follow code editing
 
 * Customize the graph:
-    * Layout graphs by file/folder, by files, without any grouping, or using custom groups
+    * Layout graphs by file/folder, by files, with no grouping, or using custom groups
     * Hide unwanted graph items that are not relevant to your focus
     * Collapse graph items to show class dependencies at any level of detail
     * Easily exclude specific files from the graph
 
-* Save customized graphs as local files, and then click on a file to load the graph
+* Save customized graphs as local AtomicViz files, and then open the AtomicViz file to load the graph
 * Show graphs in either the sidebar or code editor area
 * Show multiple graphs simultaneously
 * Search the graph
@@ -48,9 +48,11 @@
 
 # Paid features
 
-* **AtomicViz** is free with limitations on the number and size of files included in the graph, and on the call-depth when graphing a function call hierarchy.
+* **AtomicViz** is free with limitations on the number and size of files included in the graph, and on the call-depth when graphing a function call hierarchy. Files in excess of the limits will be shown but will be permanently collapsed.
 
-* You can purchase an **annual license** to remove these limitations for a single machine. Click the license link in the sidebar or the smiley face in the graph toolbar to purchase a license.
+* You can purchase an **annual license** to remove these limitations for a single machine. Create a simple graph with a few files. In the graph window show the "Atomic" toolbar and then click the smiley face to purchase a license.
+
+* There is currently a hard cap of 80 files for performance reasons. Contact me if you need to increase this limit.
 
 
 # How to use it
@@ -75,7 +77,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 * To **add a file** to an existing "files" graph:
   > Open the file to add in the editor. Then right-click on the AtomicViz file in the file explorer and choose _**AtomicViz: Add active editor file to graph**_.
 
-* To **convert**  a "function" graphto a "files" graph:
+* To **convert** a "function" graphto a "files" graph:
   > Right-click on the AtomicViz file in the file explorer and choose _**AtomicViz: Convert 'function' graph to 'files' graph**_ from the context menu.
 
 
@@ -92,7 +94,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 * **Graph item actions**
     * Collapse and expand a graph item using the arrow icons at its top-right 
-    * Remove a file or group by clicking the trash icon at its top-left
+    * Remove a file or group by clicking the trash icon at its top-left. Note that files and folder groups cannot be removed in a "function" graph. Convert the "function' graph to a "files" graph to customize it.
     * Hide unwanted graph items by selecting them and clicking the buttton _**Visible: Hide**_ in the **Visible** toolbar
     * Click a graph item to toggle its selection state. To select multiple graph items, check the checkbox _**"Selection: Multi"**_ 
 
@@ -124,7 +126,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 * **Visible toolbar**
     * Hide selected items. You can hide graph items that are not relevant to your focus or to the task at hand
-    * **Hidden items** can be made visible again by clicking on the eye icon on a graph item), or using the toolbar button  _**Layout: Show hidden**_ to show top-level graph items that are hidden
+    * **Hidden items** can be made visible again by clicking on the eye icon on a graph item, or using the toolbar button  _**Layout: Show hidden**_ to show top-level graph items that are hidden
     * Expand and collapse graph items to change the level of detail
         * **Collapse graph items**: classes or anonymous functions (or callbacks)
         * **Expand graph items**: classes or anonymous functions (or callbacks)
@@ -205,6 +207,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 #### Create custom groups
 ![Cluster menu](media/gif_cluster_menu.gif)
 
+
 # How does it work
 
 * AtomicViz uses the **language server** capabilities of VS Code that are provided for each language. The language server can provide a call hierarchy for any function, so it is possible to build a map of a codebase by interrogating the language server for all the functions in a given scope.
@@ -226,6 +229,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 * code architecture diagram
 * code diagram
 * code graph
+* code map
 * code navigation
 * code visualizer
 * code visualization
