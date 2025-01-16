@@ -8,7 +8,8 @@
 
 * Select a set of files to generate an interactive code diagram
 * Customize graphs to show only the classes and functions that are relevant to the task at hand
-* Demo video: https://www.youtube.com/watch?v=ZsDd4Q4E81I
+* Video overview: https://youtu.be/ZsFmE1eRgh4
+* Video usage detail: https://www.youtube.com/watch?v=ZsDd4Q4E81I
 
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
 
@@ -52,7 +53,7 @@
 
 * You can purchase an **annual license** to remove these limitations for a single machine. Create a simple graph with a few files. In the graph window show the "Atomic" toolbar and then click the smiley face to purchase a license.
 
-* There is currently a hard cap of 80 files for performance reasons. Contact me if you need to increase this limit.
+* There is currently a hard cap of the number of files allowed, for performance reasons. Contact me if you need to increase this limit.
 
 
 # How to use it
@@ -253,6 +254,12 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 * **The graph is not created or there are no arrows between graph items**
   Sometimes the language server is not ready. AtomicViz will try to open one of the files in the graph to kickstart the language server, but sometimes it starts too slow. As a rememdy, first open any file in the language to be graphed **before** creating a graph or loading a graph file.
+
+* **The graph is created and the files are included, but there are no arrows for some files**
+  Ensure that your project configuration includes all of the files to be graphed. For example, in a Typescript project, ensure that the "rootDir" directory in tsconfig.json includes all of the files to be graphed.
+
+* **Document symbol information not available for file 'xyz'**
+  The language server is unable to provide information about the symbols in the file. Try including fewer files in your graph.
 
 
 # Feedback
