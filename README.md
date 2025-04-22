@@ -7,11 +7,23 @@
 **AtomicViz** builds a visual map of your codebase, giving you a clearer understanding of its architecture, and making navigation easier.
 
 * Select a set of files to generate an interactive code diagram
+* Generate a graph of a function call hierarchy
 * Customize graphs to show only the classes and functions that are relevant to the task at hand
+* Use the integrated outline view which mirrors the graph and improves navigation
+* Works with Typescript, Javascript, Python, Java, C++, C#, and other major languages
+
 * Video overview: https://youtu.be/ZsFmE1eRgh4
-* Video usage detail: https://www.youtube.com/watch?v=ZsDd4Q4E81I
+* Video detail: https://www.youtube.com/watch?v=ZsDd4Q4E81I
 
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
+
+
+# NEW Features
+
+* Generate a "focused function" graph to show the call hierarchy of the function currently focused in the editor
+* To **create a graph** of the **focused function**, open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused function**_. Then put the cursor on any function name in the editor to show the function's call hierarchy.
+
+![Focused function](media/gif_focused_function.gif)
 
 
 # Features
@@ -22,10 +34,13 @@
     * Class inheritance
     * Interface implementation
 
+* An integrated outline view mirrors the graph
+
+* Interact with the code:
+    * Jump to code from the graph or outline
+    * The graph and outline follow code editing
+
 * Works for many programming languages
-* Interacts with the code:
-    * Jump to code from the graph
-    * Make the graph follow code editing
 
 * Customize the graph:
     * Layout graphs by file/folder, by files, with no grouping, or using custom groups
@@ -51,7 +66,7 @@
 
 * **AtomicViz** is free with limitations on the number and size of files included in the graph, and on the call-depth when graphing a function call hierarchy. Files in excess of the limits will be shown but will be permanently collapsed.
 
-* You can purchase an **annual license** to remove these limitations for a single machine. Create a simple graph with a few files. In the graph window show the "Atomic" toolbar and then click the smiley face to purchase a license.
+* You can purchase an **annual license** to remove these limitations for a single machine. Create a simple graph with a few files. In the graph window show the "Atomic" toolbar and then click the smiley face to purchase a license. When developing remotely, the license will be valid only for the remote machine.
 
 * There is currently a hard cap of the number of files allowed, for performance reasons. Contact me if you need to increase this limit.
 
@@ -62,15 +77,20 @@ You can create several types of graphs:
 
 1. **Files graph**: A graph based on a set of selected files which shows function calls, class inheritance, or interface implementation
 
-2. **Function graph**: A graph which shows the call hierarchy of single function to a given call depth
+2. **Function graph**: A graph which shows the call hierarchy of single function to a selected call depth
+
+3. **Focused function graph**: A graph which shows the call hierarchy of sthe currently focused function
 
 Files identified in any **.gitignore** file in the project will be ignored when creating a graph.
 
 * To **create a graph** for **selected files**:
-  > In the file explorer select the folders or files to include in the graph, right-click and choose _**AtomicViz: Create graph for selected files**_ from the context menu.
+  > In the file explorer select the folders or files to include in the graph, right-click and choose _**AtomicViz: Create graph for selected files**_ from the context menu. Choose the command _**AtomicViz: Create graph for selected files, with variables**_ to include variable references.
 
-* To **create a graph** for a **single function** to see its call hierarchy with a desired depth:
+* To **create a graph** for a **single function** to see its call hierarchy:
   > In the code, position the cursor on a function name, right-click and choose _**AtomicViz: Create graph for function**_ from the context menu. You can change the call depth later using the buttons in the toolbar.
+
+* To **create a graph** of the **focused function**:
+  > Open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused function**_. An empty graph will be created. Then put the cursor on any function name in an editor window to show the function's call hierarchy.
 
 * To **open an existing** graph file:
   > Click on the AtomicViz file (*.atm) in the file explorer. If the graph file is already open, then right-click on the file in the file explorer and choose _**AtomicViz: Show graph**_ from the context menu.
@@ -78,7 +98,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 * To **add a file** to an existing "files" graph:
   > Open the file to add in the editor. Then right-click on the AtomicViz file in the file explorer and choose _**AtomicViz: Add active editor file to graph**_.
 
-* To **convert** a "function" graphto a "files" graph:
+* To **convert** a "function" graph to a "files" graph:
   > Right-click on the AtomicViz file in the file explorer and choose _**AtomicViz: Convert 'function' graph to 'files' graph**_ from the context menu.
 
 
@@ -110,7 +130,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
         * Arrows are shown for each reference to the variable within functions, excluding references in global scope
         * Use **Focus mode** to more clearly see the usage of the variable
 
-    * For a **Function graph**, yyou can only choose the depth of the call hierarchy
+    * For a **Function graph**, you can only choose the depth of the call hierarchy
     * Rebuild the graph after making code changes, by clicking the button _**Graph: Rebuild graph**_
         * If file or folder names have changed, you will be prompted about the missing files. If the graph is being loaded from an **AtomicViz** file, then you edit the graph file manually to fix the file paths
 
@@ -120,7 +140,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
     * Choose whether the graph **automatically follows** the cursor position in the editor. A newly focused graph item will be  highlighted in pink for a moment
 
 * **Grouping toolbar**
-    * Choose to group graph items by **file/folder**, by **file**, **without any grouping**, or using **custom groups**
+    * Choose to group graph items by **file/folder**, by **file**, by **class**, or **without any grouping**. When not grouping by folders, you can create **custom groups**
     * When choosing to layout the graph by **files** or **without any grouping**, then you can create your own **custom groups**
     * To create a group, type a name for it, select the top-level graph items to include, and then click the button _**Grouping: Create group**_
     * Groups can include other groups. To select a group click the checkmark icon at its top-left
@@ -167,16 +187,27 @@ Files identified in any **.gitignore** file in the project will be ignored when 
     * Please report any bugs or ideas for improvement. You can also email me at atomicviz11@gmail.com
 
 * **AtomicViz toolbar**
-    * Click on the smiley face to **purchase an annual license** for the single machine you are using. Upon purchase, you will be **emailed the license key**.
+    * Click on the smiley face to **purchase an annual license** for the single machine you are using. Upon purchase, you will be **emailed the license key**. When developing remotely, the license will be valid only for the remote machine.
     * Paste the **license key** into the text box and click the _**smiley face**_ button to activate the license.
     * Double-click the smiley face to remove an already activated license.
 
 
 # Graph windows and colors
+
 * Graphs can be shown in either the **sidebar** or code **editor area**. This is determined by the extension setting _**Show in sidebar**_
 * Only a single sidebar graph can be open, but multiple graphs can be open simultaneously in the editor area
 * Graphs use the **VS Code theme**, light or dark
 * Graph colors for each type of graph item can be changed in the extension settings
+
+
+# Outline view
+
+* The visibility and expansion state of items in the outline will mirror the graph
+* Expand and collapse items in the outline to affect the graph
+* Hide items via the outline, and delete files from the graph
+* Select an item in the outline to navigate to the item in the editor and/or in the graph
+* Choose whether the outline is interactive, that is, whether an item in the outline will be selected and focused when a graph item is double-clicked or when a symbol is selected in the editor
+* Control whether the editor and/or graph will follow a selection in the outline when manually selecting an item in the outline
 
 
 # Data & Privacy
@@ -246,7 +277,7 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 
 * **The extension isn't working for my language**
 
-  Make sure your language is supported in VS Code. It should natively provide the ability to see the call hierarchy of a function, a capability usually installed as part of a language pack. You can check for this capability by right-clicking on the name of a function in your code, and see if there is a "**Show Call Hierarchy**" option in the context menu.
+  Make sure your language is supported in VS Code. It should natively provide the ability to see the call hierarchy of a function, a capability usually installed as part of a language pack. You can check for this capability by right-clicking on the name of a function in your code, and see if there is a "**Show Call Hierarchy**" option in the context menu. You can further test that feature be showing both the incoming and outgoing calls from a function. 
 
 <p align="center">
   <img src="media/requirements_call_hierarchy.png" width="300" alt="Call Hierarchy" />
@@ -259,8 +290,17 @@ Files identified in any **.gitignore** file in the project will be ignored when 
   Ensure that your project configuration includes all of the files to be graphed. For example, in a Typescript project, ensure that the "rootDir" directory in tsconfig.json includes all of the files to be graphed.
 
 * **Document symbol information not available for file 'xyz'**
-  The language server is unable to provide information about the symbols in the file. Try including fewer files in your graph.
+  The language server is unable to provide information about the symbols in the file. Probably the language pack you installed doesn't provide the necessary support.
 
+* **Graph construction never finishes**
+  There are some VS Code API issues that can cause the extension to crash. Try to uninstall and reinstall the extension, or simply restart all extensions. Please report the issue.
+
+* **Language specfic notes:**
+  Typescript: Class constructors should not be delcared public, although it is legal
+  PHP: The "PHP IntelliSense" extension and other PHP extensions do not provide the feature to "Show Call Hierarchy"
+  C#: The "C# for Visual Studio Code" extension does not provide the feature to "Show Call Hierarchy"
+  D3: Due to the way D3 handles function chaining, some files may be skipped in a graph of files, and a function call graph may fail completely, requireing a restart of VS Code extensions
+  
 
 # Feedback
 
