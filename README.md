@@ -11,7 +11,6 @@
 * Customize graphs to show only the classes and functions that are relevant to the task at hand
 * Use the integrated outline view which mirrors the graph and improves navigation
 * Works with Typescript, Javascript, Python, Java, C++, C#, and other major languages
-
 * Video overview: https://youtu.be/ZsFmE1eRgh4
 * Video detail: https://www.youtube.com/watch?v=ZsDd4Q4E81I
 
