@@ -20,10 +20,10 @@
 
 # NEW Features
 
-* Generate a "focused function" graph to show the call hierarchy of the function currently focused in the editor
-* To **create a graph** of the **focused function**, open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused function**_. Then put the cursor on any function name in the editor to show the function's call hierarchy.
+* Quickly generate a graph of a function or variable by double-clicking it in the editor to select it
+* To **create a graph** of the **focused symbol**, open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused symbol**_. Then double-click a function or variable in the editor to create the graph.
 
-![Focused function](media/gif_focused_function.gif)
+![Focused function](media/gif_focused_synbol.gif)
 
 
 # Features
@@ -79,7 +79,7 @@ You can create several types of graphs:
 
 2. **Function graph**: A graph which shows the call hierarchy of single function to a selected call depth
 
-3. **Focused function graph**: A graph which shows the call hierarchy of sthe currently focused function
+3. **Focused symbol graph**: A graph which dynamically shows a graph for the function or variable selected in the editor
 
 Files identified in any **.gitignore** file in the project will be ignored when creating a graph.
 
@@ -89,8 +89,8 @@ Files identified in any **.gitignore** file in the project will be ignored when 
 * To **create a graph** for a **single function** to see its call hierarchy:
   > In the code, position the cursor on a function name, right-click and choose _**AtomicViz: Create graph for function**_ from the context menu. You can change the call depth later using the buttons in the toolbar.
 
-* To **create a graph** of the **focused function**:
-  > Open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused function**_. An empty graph will be created. Then put the cursor on any function name in an editor window to show the function's call hierarchy.
+* To **create a graph** of the **focused symbol**:
+  > Open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused symbol**_. An empty graph will be created. Then double-click a function or variable name in the editor to select it and create the graph.
 
 * To **open an existing** graph file:
   > Click on the AtomicViz file (*.atm) in the file explorer. If the graph file is already open, then right-click on the file in the file explorer and choose _**AtomicViz: Show graph**_ from the context menu.
