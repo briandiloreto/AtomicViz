@@ -21,38 +21,12 @@
 ![Layout by file/folder](media/gif_layout_files_folders.gif)
 
 
-# NEW Features (2025-06-11)
+# NEW Feature (2025-08-13)
 
-* Improved set of tools in the **Visibility** toolbar to handle complicated graphs
-    * The menu to hide items now includes "Internal class methods" and "Internal file functions" to quickly simplify the graph
-    * The menu to show items now includes options to quickly show all items of a granularity
-    * **Focus mode** now allows you to show items connected to the selection to a chosen depth
-    * **Level Of Detail mode** allows you to quickly simply the graph to a chosen level of detail
-    * Video (visibility menu):  https://youtu.be/QbO9B-ZIJB8
-    * Video (focus mode):  https://youtu.be/H6Mmt_8yuf4
-    * Video (level of detail mode):  https://youtu.be/q7MTFmctMc0
-* Added button in **Graph** toolbar to toggle visibility of interfaces for a 'files' graph
-* Added button in **Arrows** toolbar to control the size of the arrowheads
-* Added explorer context menu command to easily add a file to the active graph
-
-![Focused function](media/gif_visibility_menu.gif)
-
-
-# NEW Features (2025-05-27)
-
-* Publish interactive graphs that can be used outside of VS Code and shared with others. This features requires a license.
-* To **publish a graph** show the **Publish** toolbar. Provide a name for the graph and click the _**Publish**_ button. Then click the _**Rocket**_ button to open the AtomicViz website where you can manage all of your published graphs.
-* To **share a graph** from the AtomicViz webite, show the **Mangage** toolbar and click the _**Link**_ button to get the URL.
-
-![Focused function](media/gif_publish.gif)
-
-
-# NEW Features (2025-04-23)
-
-* Quickly generate a graph of a function or variable by double-clicking it in the editor to select it
-* To **create a graph** of the **focused symbol**, open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused symbol**_. Then double-click a function or variable in the editor to create the graph.
-
-![Focused function](media/gif_focused_synbol.gif)
+* Quickly see functional groups within a complex codebase using "Communities" mode
+* In the  _**Visible**_ toolbar, click on the _**Communities**_ button. Then select one of the communities from the dropdown.
+* Communities of classes and functions are detected automatically by analyazing a set of files
+![Focused function](media/gif_community.gif)
 
 
 # Features
@@ -65,28 +39,34 @@
 
 * An integrated outline view mirrors the graph
 
+* Works for many programming languages
+
 * Interact with the code:
     * Jump to code from the graph or outline
-    * The graph and outline follow code editing
+    * The graph and outline can follow code editing
 
-* Works for many programming languages
+* Integration with VS Code:
+    * Save customized graphs as local AtomicViz files, and then open an AtomicViz file to load the graph
+    * Show graphs in either the sidebar or code editor area
+    * Show multiple graphs simultaneously
+    * Use the VS Code theme, light or dark
+    * Configure graph colors
+    
+* Export graphs as SVG
+* Export interactive graphs to be used outside of VS Code, and shared with others
+* Search the graph
+
+* Advanced tools:
+    * Use COMMUNITY mode to see functional groups of classes and functions within a complex codebase
+    * Use FOCUS mode to see the connections to selected graph items to a chosen depth
+    * Use LEVEL OF DETAIL mode to simplify the graph to a chosen level of detail
 
 * Customize the graph:
     * Layout graphs by file/folder, by files, with no grouping, or using custom groups
-    * Hide unwanted graph items that are not relevant to your focus
-    * Collapse graph items to show class dependencies at any level of detail
-    * Easily exclude specific files from the graph
+    * Hide unwanted files, classes and functions that are not relevant to your focus
+    * Collapse files, classes and functions to show dependencies at the desired level of detail
+    * Exclude specific files from the graph using your .gitignore file
 
-* Use FOCUS mode to quickly see the connections to selected graph items to a chosen depth
-* Use LEVEL OF DETAIL mode to quickly simply the graph to a chosen level of detail
-* Save customized graphs as local AtomicViz files, and then open the AtomicViz file to load the graph
-* Show graphs in either the sidebar or code editor area
-* Show multiple graphs simultaneously
-* Search the graph
-* Use the VS Code theme, light or dark
-* Configure graph colors
-* Export graphs as SVG
-* Publish interactive graphs usable outside of VS Code
 
 # Requirements
 
