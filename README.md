@@ -4,7 +4,7 @@
 
 # Atomic Viz
 
-**Atomic Viz** creates a visual map of your codebase, giving you a clearer understanding of its architecture, and making navigation easier.
+<a href="https://atomicviz.web.app/">**Atomic Viz**</a> creates a visual map of your codebase, giving you a clearer understanding of its architecture, and making navigation easier.
 
 * Select a set of files to generate an interactive code diagram
 * Show function call hierarchies, variable references, class inheritance, and interface implementation
@@ -12,12 +12,12 @@
 * Hide and collapse items to reduce the level of detail
 * An integrated outline mirrors the graph and aids navigation
 * Works with Typescript, Javascript, Python, Java, C++, and other major languages
-* Understand complex codebases quickly 
-* **Video tutorials**: https://atomicviz.web.app/page-tutorial
-* **Documentation**: https://atomicviz.web.app/page-help
 
+&nbsp;
+&nbsp;
 ![Code diagram grouping by folder or file](media/gif_layout_files_folders.gif)
-
+&nbsp;
+&nbsp;
 
 # NEW Feature (2026-01-20)
 
@@ -28,27 +28,28 @@
 # Features
 
 * Interactive Code Diagrams
-    * Instant Diagrams: Create an interactive code diagram from selected files or folders.
-    * Call Hierarchy Visualization: Deep-dive into a function call graph to see exactly how data flows.
-    * Dependency Tracking: Automatically map class inheritance, interface implementation, and follow variable references.
-    * Custom Views: Group items by folder, file, or custom logical groups. Hide and collapse items to reduce the level of detail.
+    * **Graph Context**: Create an interactive code diagram from selected files or folders.
+    * **Call Hierarchy Visualization**: Deep-dive into a function call graph to see exactly how data flows.
+    * **Dependency Tracking**: Map class inheritance, interface implementation, and follow variable references.
+    * **Custom Views**: Group items by folder, file, or custom logical groups. Hide and collapse items to reduce the level of detail.
 
 * Code Navigation
-    * Graph To Code: Jump directly to source code from the graph or outline.
-    * Code To Graph: Make the graph follow the active selection in the editor.
-    * Integrated Outline: Use a synced outline view that mirrors the graph for easy navigation.
-    * Search: Quickly find specific nodes within complex dependency graphs.
+    * **Graph To Code**: Jump directly to source code from the graph or outline.
+    * **Code To Graph**: Make the graph follow the active selection in the editor.
+    * **Integrated Outline**: Use a synced outline view that mirrors the graph for easy navigation.
+    * **Search**: Quickly find specific nodes within complex dependency graphs.
 
 * Language & Workspace Support
-    * Multi-Language: Support for TypeScript, JavaScript, Python, Java, and C++, and more.
-    * VS Code Integration: Show graphs in the sidebar, code editor, or in a detached window. Supports Light/Dark themes and graph color customization.
-    * Privacy First: All code analysis and graph generation happens 100% locally on your machine.
+    * **Multi-Language**: Support for TypeScript, JavaScript, Python, Java, and C++, and more.
+    * **VS Code Integration**: Show graphs in the sidebar, code editor, or in a detached window. Supports Light/Dark themes and graph color customization.
+    * **Privacy First**: All code analysis and graph generation happens 100% locally on your machine.
 
 * Advanced Tools
-    * Export & Share: Save your customized graph locally as SVG or as an AtomicViz file. Publish and share the graph for team reviews.
-    * Focus Mode: Isolate specific symbols to see immediate connections at a chosen depth.
-    * Community and Level-Of-Detail Modes: Automatically detect functional clusters, or show only the most "connected" classes and functions within massive codebases.
-    * Multiple Graph Support: Show multiple graphs of the same code simultaneously but customized differently to see different levels of detail
+    * **Export & Share**: Save your customized graph locally as SVG or as an AtomicViz file. Publish and share the graph for team reviews.
+    * **Focus Mode**: Isolate specific symbols to see immediate connections at a chosen depth.
+    * **Community and Level-Of-Detail Modes**: Automatically detect functional clusters, or show only the most "connected" classes and functions within massive codebases.
+    * **Multiple Graph Support**: Show multiple graphs of the same code simultaneously but customized differently to see different levels of detail
+
 
 # Requirements
 
@@ -57,7 +58,7 @@
 
 # How To Use It
 
-You can create several types of graphs:
+You can create 3 types of graphs:
 
 1. **Files graph**: A graph based on a set of selected files. You can show function calls, class inheritance, interface implementation, variable references, or variables that are type instances.
 
@@ -95,8 +96,8 @@ You can create several types of graphs:
 
 # Documentation
 
-* <a href="https://atomicviz.web.app/page-help">Detailed instructions and troubleshooting</a>
-* <a href="https://atomicviz.web.app/page-tutorial">Video tutorials</a>
+* <a href="https://atomicviz.web.app/page-help">**Instructions and troubleshooting**</a>
+* <a href="https://atomicviz.web.app/page-tutorial">**Video tutorials**</a>
 
 * Graph windows
     * Choose whether to show graphs in the **AtomicViz sidebar** or in the **editor area** (Atomic Viz sidebar menu)
@@ -145,7 +146,7 @@ You can create several types of graphs:
 
     * Use the hide/show commands in the **Visible** toolbar
         * Temporarily hide graph items which are selected
-        * Temporarily hide graph items of a chosen type, for example interfaces or class methods called only internally in the class
+        * Temporarily hide graph items of a chosen type, for example interfaces or class methods called only within the class
         * Show hidden children of a graph item by clicking its eye icon
         
     * Use advanced commands in the **Visible** toolbar
@@ -183,14 +184,14 @@ You can create several types of graphs:
 # Feedback
 
 I would love to hear your feedback and ideas for improvements.
-Create a disucssion on at <a href="https://github.com/briandiloreto/AtomicViz">Github discussion</a>.
+Create a disucssion on at <a href="https://github.com/briandiloreto/AtomicViz/discussions">Github discussion</a>.
 Report issues or ideas at <a href="https://github.com/briandiloreto/AtomicViz">Github Issues</a>.
 Email any questions and comments to atomicviz11@gmail.com
 
 Thanks!
 
 
-# Support further development
+# Support Development
 
 **AtomicViz** wasn't easy to build. If you find it useful, please consider supporting it.
 
@@ -198,4 +199,5 @@ Thanks!
 
 
 # License
+
 [Copyright](LICENSE.md) &copy; Brian DiLoreto 2025
