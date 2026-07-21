@@ -6,23 +6,20 @@
 
 <a href="https://atomicviz.web.app/">**Atomic Viz**</a> creates a visual map of your codebase, giving you a clearer understanding of its architecture, and making navigation easier.
 
+Unlike static UML or drawing tools, Atomic Viz builds live, interactive diagrams from your real code — so the graph always reflects what your codebase actually does.
+
 * Select a set of files to generate an interactive code diagram
 * Show function call hierarchies, variable references, class inheritance, and interface implementation
 * Group items by folder, file, or custom logical groups to simplify the graph
 * Hide and collapse items to reduce the level of detail
 * An integrated outline mirrors the graph and aids navigation
-* Works with Typescript, Javascript, Python, Java, C++, and other major languages
+* Works with Typescript, Javascript, Python, Java, C++, Rust, and other major languages
 
 &nbsp;
 &nbsp;
 ![Code diagram grouping by folder or file](media/gif_layout_files_folders.gif)
 &nbsp;
 &nbsp;
-
-# NEW Feature (2026-01-20)
-
-* The AtomicViz sidebar has moved from the Explorer to its own top-level icon in the activity bar
-* An editor window containing a graph can be detached and moved to a new window, on another monitor for example
 
 
 # Features
@@ -31,7 +28,8 @@
     * **Graph Context**: Create an interactive code diagram from selected files or folders.
     * **Call Hierarchy Visualization**: Deep-dive into a function call graph to see exactly how data flows.
     * **Dependency Tracking**: Map class inheritance, interface implementation, and follow variable references.
-    * **Custom Views**: Group items by folder, file, or custom logical groups. Hide and collapse items to reduce the level of detail.
+    * **Custom Views**: Group items by folder, file, class, or custom logical groups. Explode a class into its methods to reveal its internal call hierarchy Hide and collapse items to reduce the level of detail.
+    * **Git changes**: Group 
 
 * Code Navigation
     * **Graph To Code**: Jump directly to source code from the graph or outline.
@@ -40,7 +38,7 @@
     * **Search**: Quickly find specific nodes within complex dependency graphs.
 
 * Language & Workspace Support
-    * **Multi-Language**: Support for TypeScript, JavaScript, Python, Java, and C++, and more.
+    * **Multi-Language**: Support for TypeScript, JavaScript, Python, Java, and C++, Rust, and more.
     * **VS Code Integration**: Show graphs in the sidebar, code editor, or in a detached window. Supports Light/Dark themes and graph color customization.
     * **Privacy First**: All code analysis and graph generation happens 100% locally on your machine.
 
@@ -51,38 +49,72 @@
     * **Multiple Graph Support**: Show multiple graphs of the same code simultaneously but customized differently to see different levels of detail
 
 
+# Git Changes graph (NEW)
+
+See exactly what changed in your Git working tree and how it ripples through the codebase — a graph built for **reviewing** changes.
+
+Run **_AtomicViz: Create graph of Git changes_** from the Command Palette (Ctrl+Shift+P). You'll be asked a few things:
+
+* **Which changes to compare?**
+    * **Uncommitted changes**: The working tree vs the last commit (HEAD)
+    * **Staged changes** : What's about to be committed
+    * **Changes since a commit…**: The working tree vs a base commit you pick (for example the start of a branch), to review a whole pull request's worth of change at once
+* **Which direction to trace?**
+    * **Impact**: Who *calls* the changed code (what might I have broken?)
+    * **Dependencies**: what the changed code *calls* (what does this change rely on?)
+* **How many levels?**: How far to follow callers/callees outward from the change
+
+If your changes span multiple languages, you'll also pick **which language to graph** — a git-changes graph shows one language at a time.
+
+The graph then colour-codes every symbol. See the <a href="https://atomicviz.web.app/page-help">online help</a> for the colour legend and details of what the graph does and doesn't capture.
+
+# NEW Feature (July 2026)
+
+* New grouping mode that explodes a class into a group of its methods, so its internal call hierarchy is visible as arrows between the methods
+* Explode every class at once, or explode an individual class by clicking its explode icon while leaving the others compact
+
+
+
 # Requirements
 
 * Install the language pack for your language
 
 
-# How To Use It
+# Create a graph
 
-You can create 3 types of graphs:
+You can create several types of graphs:
 
-1. **Files graph**: A graph based on a set of selected files. You can show function calls, class inheritance, interface implementation, variable references, or variables that are type instances.
+1. **Files**: A graph based on a set of selected files. You can show function calls, class inheritance, interface implementation, variable references, or variables that are type instances.
 
-2. **Function graph**: A graph which shows the call hierarchy of single function to a selected call depth
+2. **Function**: A graph which shows the call hierarchy of single function to a selected call depth
 
-3. **Focused symbol graph**: A graph which dynamically shows a graph for the function or variable selected in the editor
+3. **Focused symbol**: A graph which dynamically shows a graph for the function or variable selected in the editor
+
+4. **Git changes**: A graph showing changes in your working tree and what is affected<
+
 
 * To **create a graph** for **selected files**:
   > In the file explorer select the folders or files to include in the graph, right-click and choose _**AtomicViz: Create graph for selected files**_ from the context menu. Choose the command _**AtomicViz: Create graph for selected files, with variables**_ to include variable references. When multiple languages are found in the files, choose the language to graph.
 
 * To **create a graph** for a **single function** to see its call hierarchy:
-  > In the editor position the cursor on a function name, right-click and choose _**AtomicViz: Create graph for function**_ from the context menu. You can change the call depth later using the Graph toolbar.
+  > In the editor select a function name, right-click and choose _**AtomicViz: Create graph for selected function**_ from the context menu. You can change the call depth using the Graph toolbar.
 
 * To **create a graph** of the **focused symbol**:
   > Open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of focused symbol**_. An empty graph will be created. Then double-click a function or variable name in the editor to select it and create the graph.
+
+* To **create a graph** of the **Git changes**:
+  > Open the Command Palette (Ctrl+Shift+P) and choose the command _**AtomicViz: Create graph of Git changes**_. Answer a few questions to configure the graph.
+
+* NOTE: Files identified in any **.gitignore** file in the project will be ignored when creating a graph.
+
+
+# Work with AtomicViz files
 
 * To **open an Atomic Viz graph** saved to file:
   > Right-click the AtomicViz file (*.atm) in the file explorer and choose the command _**AtomicViz: Show graph**_ from the context menu.
 
 * To **add a file** to an existing "files" graph:
-  > Open the file to add to the graph in the editor. Then right-click on the Atomic Viz file in the file explorer and choose _**AtomicViz: Add active editor file to graph**_.  OR
-  > Load or create a graph. Then right-click on a file in the file explorer and choose _**AtomicViz: Add file to graph**_.
-
-* NOTE: Files identified in any **.gitignore** file in the project will be ignored when creating a graph.
+  > Open the file to add to the graph in the editor. Then right-click on the Atomic Viz file in the file explorer and choose _**AtomicViz: Add active editor file to graph**_.  Alternatively, you can load or create a graph. Then right-click on a file in the file explorer and choose _**AtomicViz: Add file to graph**_. Alternatively, you can load or create a graph. Then click the button in the Graph toolbar to rebuild the graph, showing calls to outside files. The graph will include arrow icons next to functions from which such calls are made. Click an icon to choose the file to add to the graph. </p>
 
 
 # Paid Features
@@ -184,20 +216,21 @@ You can create 3 types of graphs:
 # Feedback
 
 I would love to hear your feedback and ideas for improvements.
-Create a disucssion on at <a href="https://github.com/briandiloreto/AtomicViz/discussions">Github discussion</a>.
-Report issues or ideas at <a href="https://github.com/briandiloreto/AtomicViz">Github Issues</a>.
-Email any questions and comments to atomicviz11@gmail.com
+
+* Create a disucssion on at <a href="https://github.com/briandiloreto/AtomicViz/discussions">Github discussion</a>.
+* Report issues or ideas at <a href="https://github.com/briandiloreto/AtomicViz">Github Issues</a>.
+* Email any questions and comments to atomicviz11@gmail.com
 
 Thanks!
 
 
 # Support Development
 
-**AtomicViz** wasn't easy to build. If you find it useful, please consider supporting it.
+If you find **AtomicViz** useful, please consider supporting further development.
 
 <a title="Paypal" href="https://www.paypal.com/donate/?hosted_button_id=4FLK7Y5EWR7DE"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
 
 
 # License
 
-[Copyright](LICENSE.md) &copy; Brian DiLoreto 2025
+[Copyright](LICENSE.md) &copy; Brian DiLoreto 2026
